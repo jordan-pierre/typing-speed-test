@@ -32,7 +32,7 @@ def main():
     csv_name = 'time_trials_' + str(time.time())[-5:]
     df = pd.DataFrame({'Times': times})
     df.to_csv(csv_name)
-    print("File name: " + csv_name)
+    print("Times for each trial saved in: " + csv_name)
 
 
 if __name__ == '__main__':
