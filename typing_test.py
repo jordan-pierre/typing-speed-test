@@ -9,9 +9,9 @@ def get_input(prompt, count):
         end_time = time.time()
         count += 1
         trial_time = end_time - start_time
-        print("Submission accepted, time was {} sec, new count = {}".format(trial_time, count))
+        print("\nSubmission accepted, time was {} sec, new count = {}".format(trial_time, count))
     else:
-        print("Submission rejected, expected '{}' but received '{}'".format(prompt, uinput))
+        print("\nSubmission rejected, expected '{}' but received '{}'".format(prompt, uinput))
         trial_time, count = get_input(prompt, count)
     return trial_time, count
 
@@ -29,7 +29,7 @@ def main():
         times.append(trial_time)
     print("Trials complete.  Here are your times: ")
     print(times)
-    csv_name = 'time_trials_' + str(time.time())[-5:]
+    csv_name = 'time_trials_{}.csv'.format(str(time.time())[-5:])
     df = pd.DataFrame({'Times': times})
     df.to_csv(csv_name)
     print("Times for each trial saved in: " + csv_name)
